@@ -1,0 +1,3 @@
+rootProject.name = 'keep_clone'
+
+include ':app'
