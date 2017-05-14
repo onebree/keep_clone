@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Button } from 'react-native';
+import { View, Button, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Field } from './common';
@@ -41,6 +41,10 @@ class LoginForm extends Component {
           />
         </CardSection>
 
+        <Text style={styles.errorTextStyles}>
+          {this.props.error}
+        </Text>
+
         <CardSection>
           <View style={{ flex: 1 }}>
             <Button
@@ -54,10 +58,18 @@ class LoginForm extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const { email, password } = state.auth;
+const styles = {
+  errorTextStyles: {
+    fontSize: 20,
+    alignSelf: 'center',
+    color: 'red'
+  }
+};
 
-  return { email, password };
+const mapStateToProps = state => {
+  const { email, password, error } = state.auth;
+
+  return { email, password, error };
 };
 
 export default connect(mapStateToProps, {
