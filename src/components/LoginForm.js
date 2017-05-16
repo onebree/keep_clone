@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Button, Text } from 'react-native';
+import { View, Button, Text, Keyboard } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Field, Spinner } from './common';
@@ -15,6 +15,8 @@ class LoginForm extends Component {
 
   onButtonPress() {
     const { email, password } = this.props;
+
+    Keyboard.dismiss();
 
     this.props.loginUser({ email, password });
   }
