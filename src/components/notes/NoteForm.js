@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import { View, Button } from 'react-native';
-import { Card, CardSection, Field } from './common';
+import { Card, CardSection } from '../common';
+import { NoteField } from '../notes';
 
 class NoteForm extends Component {
   render() {
     return (
       <Card>
         <CardSection>
-          <Field
-            label="Titile"
+          <NoteField
             placeholder="Title"
+            style={{ fontWeight: 'bold', fontSize: 16 }}
           />
         </CardSection>
 
         <CardSection>
-          <Field
-            label="Note body"
+          <NoteField
             placeholder="Note body"
+            multiline
+            style={{ height: 200, textAlignVertical: 'top' }}
           />
         </CardSection>
 
@@ -26,6 +28,10 @@ class NoteForm extends Component {
               title="Delete"
               onPress={() => console.log('delete pressed')}
             />
+          </View>
+        </CardSection>
+        <CardSection>
+          <View style={{ flex: 1 }}>
             <Button
               title="Make a copy"
               onPress={() => console.log('copy pressed')}
@@ -37,4 +43,4 @@ class NoteForm extends Component {
   }
 }
 
-export default NoteForm;
+export { NoteForm };

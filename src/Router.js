@@ -1,8 +1,7 @@
 import React from 'react';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
-import NotesList from './components/NotesList';
-import NoteForm from './components/NoteForm';
+import { NotesList, NoteForm } from './components/notes';
 
 const RouterComponent = () => {
   return (

@@ -16,4 +16,4 @@ class NotesList extends Component {
   }
 }
 
-export default NotesList;
+export { NotesList };
